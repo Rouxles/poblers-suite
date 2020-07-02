@@ -1,5 +1,3 @@
-const { toASCII } = require("punycode");
-
 var names = [
     "Ben",
     "Guido",
