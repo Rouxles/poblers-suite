@@ -23,7 +23,7 @@ function randomName() {
 }
 
 function generatePobler() {
-    let message = document.getElementById("input-box").innerHTML;
+    let message = document.getElementById("input-box").value.trim();
     if(message.length === 0) {
         document.getElementById("pobler-generator").innerHTML = `No poblers at all! Thanks ${randomName()}`
     } else if ((message.toLowerCase().replace( /\s/g, '')) == "taotry") {
