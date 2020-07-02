@@ -9,3 +9,11 @@ function randomPobler() {
     pobler_name = randomPoblersName();
     document.getElementById("pobler-name").innerHTML = pobler_name;
 }
+
+function poblerCoin() {
+    if(Math.floor((Math.random())*2) === 0) {
+        document.getElementById("pobler-coin").innerHTML = `No poblers`
+    } else {
+        document.getElementById("pobler-coin").innerHTML = `Poblers!`
+    }
+}
