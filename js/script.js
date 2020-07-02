@@ -19,8 +19,7 @@ function poblerCoin() {
 }
 
 function randomName() {
-    let name = names[Math.floor(Math.random() * names.length)]
-    return name
+    return [Math.floor(Math.random() * names.length)]
 }
 
 function generatePobler() {
