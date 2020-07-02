@@ -12,20 +12,29 @@ function randomPobler() {
 
 function poblerCoin() {
     if(Math.floor((Math.random())*2) === 0) {
-        document.getElementById("pobler-coin").innerHTML = `No poblers`
+        document.getElementById("pobler-coin").innerHTML = `No poblers`;
     } else {
-        document.getElementById("pobler-coin").innerHTML = `Poblers!`
+        document.getElementById("pobler-coin").innerHTML = `Poblers!`;
     }
 }
 
 function randomName() {
-    return [Math.floor(Math.random() * names.length)]
+    return names[Math.floor(Math.random() * names.length)];
 }
 
 function generatePobler() {
-    message = document.getElementById("input-box").innerHTML
+    let message = document.getElementById("input-box").innerHTML;
     if(message.length === 0) {
         document.getElementById("pobler-generator").innerHTML = `No poblers at all! Thanks ${randomName()}`
+    } else if ((message.toLowerCase().replace( /\s/g, '')) == "taotry") {
+        document.getElementById("pobler-generator").innerHTML = `13 13 13`;
+    } else {
+        let words = message.split(" ");
+        let string = "";
+        for(let i = 0; i<words.length; i++) {
+            string = string + `${words[i].charAt(0)}oblers `;
+        }
+        document.getElementById("pobler-generator").innerHTML = string;
     }
 }
 
