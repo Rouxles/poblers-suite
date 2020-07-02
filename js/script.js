@@ -17,3 +17,16 @@ function poblerCoin() {
         document.getElementById("pobler-coin").innerHTML = `Poblers!`
     }
 }
+
+function randomName() {
+    let name = names[Math.floor(Math.random() * names.length)]
+    return name
+}
+
+function generatePobler() {
+    message = document.getElementById("input-box").innerHTML
+    if(message.length === 0) {
+        document.getElementById("pobler-generator").innerHTML = `No poblers at all! Thanks ${randomName()}`
+    }
+}
+
