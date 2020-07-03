@@ -22,6 +22,11 @@ function randomName() {
     return names[Math.floor(Math.random() * names.length)];
 }
 
+function randomChar(word) {
+    word_array = word.split("");
+    return word_array[Math.floor(Math.random()*word_array.length)]
+}
+
 function generatePobler() {
     let message = document.getElementById("input-box").value.trim();
     if(message.length === 0) {
@@ -32,7 +37,11 @@ function generatePobler() {
         let words = message.split(" ");
         let string = "";
         for(let i = 0; i<words.length; i++) {
-            string = string + `${words[i].charAt(0)}oblers `;
+            if (words[i].slice(-1) == "s") {
+                string = string + `${randomChar(words[i]).slice(0,1).toUpperCase()}oblers `;
+            } else {
+                string = string + `${randomChar(words[i]).slice(0,1).toUpperCase()}obler `;
+            }      
         }
         document.getElementById("pobler-generator").innerHTML = string;
     }
